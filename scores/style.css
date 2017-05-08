@@ -1,0 +1,9 @@
+input,button{
+    border-bottom: 1px solid #afafaf;
+    padding: 10px;
+}
+
+
+.vencedor{
+	color: green;
+}
