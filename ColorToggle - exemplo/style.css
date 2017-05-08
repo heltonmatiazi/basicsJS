@@ -1,0 +1,25 @@
+
+.main-header{
+	text-align: center;
+    background: #acacac;
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+button{
+	margin: 0 auto;
+    display: block;
+    background: red;
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid crimson;
+    font-weight: bold;
+}
+button:hover{
+	text-transform: uppercase;
+}
+/*essa é a classe de referencia, que é adicionada ou removida 
+do elemento 'body' sempre que o botão é clicado*/
+.purple{
+	background: purple;
+}
