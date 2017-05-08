@@ -113,3 +113,29 @@ btn.addEventListener("click",function(){
 
 /* você pode iterar por vários elementos da página usando
 esses seletores simples. Não só alterar o texto, mas também alterar estilos e atributos*/
+
+// selecionando multiplos elementos
+var lis = document.querySelector("li");
+// esse array adiciona um event listener a todos os elementos '<li>' de uma página.
+for (var i = 0; i < lis.length; i++) {
+	lis[i].addEventListener("click",function(){
+		// o seletor 'this' refere-se ao item que foi clicado. 
+		// é uma maneira mais determinística do que usar lis[i] para controlar os eventos.
+		this.classList.toggle("uma-classe");
+		// se a classe ".uma-classe" possuir uma cor de fonte, por exemplo, 
+		// cada vez que o usuário clicar no elemento a cor será alterada, por que a classe será adicionada e removida
+		// pelo método 'toggle'.
+	});
+}
+
+// funções não-anônimas
+var btn = document.querySelector("button");
+var paragraph = document.querySelector("p");
+// em javascript, você chama a função sem os parenteses quando estiver instanciando ela
+// a função com os parenteses, como em mudarText() executará a função imediatamente e resultará em um erro 
+
+btn.addEventListener("click", mudarTexto); // definir evento e parametro, sem parenteses ao lado do nome da função
+function mudarTexto(){ // definir função
+	paragraph.textContent = "alguém clicou no botão";
+};
+
