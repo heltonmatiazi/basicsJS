@@ -139,3 +139,7 @@ function mudarTexto(){ // definir função
 	paragraph.textContent = "alguém clicou no botão";
 };
 
+/* o uso de funções anônimas é recomendado para casos em que a função só vai ser executada uma vez - como
+um botão com um comportamento muito específico, ou um elemento que só será alterado quando a página for carregada
+e depois se manterá estático.
+Funções com nome apresentam maior reusabilidade e deixam seus arquivos mais legíveis. */
