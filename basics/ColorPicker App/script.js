@@ -9,15 +9,13 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
-// inicializando o conteudo
-init();
 
+//carregando todas as informações estruturais.
 function init(){
 	setupModeButtons();
 	setupSquares();
 	reset();
 }
-
 function setupModeButtons(){
 	for(var i = 0; i < modeButtons.length; i++){
 		modeButtons[i].addEventListener("click", function(){
@@ -29,30 +27,27 @@ function setupModeButtons(){
 		});
 	}
 }
-
 function setupSquares(){
-	for(var i = 0; i < squares.length; i++){
-	// add initial colors to squares
-	squares[i].style.background = colors[i];
-
-	//add click listeners to squares
-	squares[i].addEventListener("click", function() {
-		//grab color of clicked squares
-		var clickedColor = this.style.background;
-		//compare color to pickedColor
-		if(clickedColor === pickedColor) {
-			messageDisplay.textContent = "Correto!";
-			resetButton.textContent = "novo jogo?"
-			changeColors(clickedColor);
-			h1.style.background = clickedColor;
-		} else {
-			this.style.background = "#232323";
-			messageDisplay.textContent = "Errado!";
-		}
-	});
+		for(var i = 0; i < squares.length; i++){
+		// add initial colors to squares
+		squares[i].style.background = colors[i];
+		//add click listeners to squares
+		squares[i].addEventListener("click", function() {
+			//grab color of clicked squares
+			var clickedColor = this.style.background;
+			//compare color to pickedColor
+			if(clickedColor === pickedColor) {
+				messageDisplay.textContent = "Correto!";
+				resetButton.textContent = "novo jogo?"
+				changeColors(clickedColor);
+				h1.style.background = clickedColor;
+			} else {
+				this.style.background = "#232323";
+				messageDisplay.textContent = "Errado!";
+			}
+		});
+	}
 }
-}
-
 function reset(){
 	colors = generateRandomColors(numSquares);
 	pickedColor = pickColor();
@@ -69,7 +64,6 @@ function reset(){
 	}
 	h1.style.background = "steelblue";
 }
-
 function changeColors(color) {
 	//loop por todos os quadros
 	for(var i = 0; i < squares.length; i++) {
@@ -77,7 +71,6 @@ function changeColors(color) {
 		squares[i].style.background = color;
 	}
 }
-
 function pickColor() {
 	var random = Math.floor(Math.random() * colors.length);
 	return colors[random];
@@ -100,7 +93,8 @@ function randomColor(){
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
-
 resetButton.addEventListener("click",function(){
 	reset();
 });
+// inicializando o conteudo
+init();
